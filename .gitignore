@@ -1,0 +1,10 @@
+# Node modules
+/node_modules
+
+# Hugo build output
+/public
+/resources/_gen/
+
+# Hugo build lock file and stats
+/hugo_stats.json
+/.hugo_build.lock
