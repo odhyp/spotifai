@@ -15,6 +15,17 @@ from scripts.generate_track_aimlapi import generate_track_aimlapi
 load_dotenv()
 
 
+def write_to_file(content, filename):
+    backend_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(backend_dir, "..", "output")
+
+    os.makedirs(output_dir, exist_ok=True)
+    file_path = os.path.join(output_dir, filename)
+
+    with open(file_path, "w") as file:
+        file.write(content)
+
+
 def main():
     """
     Main function that generates a music track recommendation.
@@ -33,7 +44,9 @@ def main():
 
     system_prompt = "You're an expert in music."
     result = generate_track_aimlapi(api_key, system_prompt, user_prompt)
-    print(result)
+    filename = "sample.txt"
+
+    write_to_file(result, filename)
 
 
 if __name__ == "__main__":
