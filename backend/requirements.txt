@@ -1,2 +1,4 @@
+python-dotenv
 g4f
 curl_cffi
+openai
