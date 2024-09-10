@@ -1,4 +1,15 @@
+"""Module that provides utilities for generating and cleaning prompts."""
+
+
 def clean_prompt(prompt: str):
+    """Cleans and formats a multi-line string prompt.
+
+    Args:
+        prompt (str): The raw prompt string to be cleaned.
+
+    Returns:
+        str: A cleaned and formatted prompt string enclosed in double quotes.
+    """
     cleaned_prompt = prompt.strip('"""')
     cleaned_prompt = " ".join(line.strip() for line in cleaned_prompt.splitlines())
     cleaned_prompt = " ".join(cleaned_prompt.split())
@@ -6,6 +17,14 @@ def clean_prompt(prompt: str):
 
 
 def generate_prompt(track_config: dict):
+    """Generates a formatted music recommendation prompt based on the given track configuration.
+
+    Args:
+        track_config (dict): A dictionary containing track attributes.
+
+    Returns:
+        str: A cleaned and formatted prompt string for generating a music recommendation.
+    """
     genre = track_config["genre"]
     era = track_config["era"]
     popularity = track_config["popularity"]

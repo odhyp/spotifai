@@ -1,3 +1,5 @@
+"""Module to generates a random track configuration based on weighted attributes."""
+
 import random
 
 
@@ -47,13 +49,13 @@ tempos = {
 
 
 def weighted_random_choice(randomizer: dict):
-    """Pick a random item with a weight from a dictionary.
+    """Selects a random item from a dictionary based on weighted probabilities.
 
     Args:
-        randomizer (dict): _description_
+        randomizer (dict): A dictionary with item and weight.
 
     Returns:
-        str: selected choice
+        str: The randomly selected item.
     """
     items = list(randomizer.keys())
     weights = list(randomizer.values())
@@ -62,10 +64,10 @@ def weighted_random_choice(randomizer: dict):
 
 
 def generate_track_config():
-    """Generate track config dictionary for prompt.
+    """Generates a track configuration with random attributes.
 
     Returns:
-        dict: Track config
+        dict: A dictionary containing randomly selected attributes.
     """
     track_config = {
         "genre": weighted_random_choice(genres),
