@@ -75,7 +75,5 @@ def generate_track_config():
         "country": weighted_random_choice(countries),
         "mood": weighted_random_choice(moods),
         "tempo": weighted_random_choice(tempos),
-        # "instrument": weighted_random_choice(instruments),
-        # "collaboration_type": weighted_random_choice(collaboration_types),
     }
     return track_config
